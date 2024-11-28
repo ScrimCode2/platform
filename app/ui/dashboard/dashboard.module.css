@@ -13,3 +13,22 @@
     padding: 20px;
 }
 
+.wrapper{
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+.main{
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    gap: 20px;
+}
+.cards{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+.rightBlock{
+    flex: 1;
+}

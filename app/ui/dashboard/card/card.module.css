@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    gap: 20px;
+    background-color: var(--bgObj);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.container:hover {
+    background-color: var(--bgInput);
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.title {
+    font-size: 14px;
+}
+
+.count {
+    font-size: 20px;
+}
+
+.description {
+    font-size: 12px;
+}

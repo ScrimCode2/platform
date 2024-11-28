@@ -3,6 +3,7 @@
     --bgObj: #1a2436;
     --text: #fff;
     --textObj: #ebebeb;
+    --bgInput: #2e374a;
 }
 
 * {
@@ -20,3 +21,7 @@ a {
     color: inherit;
     text-decoration: none;
 }
+
+input {
+    all: unset;
+  }
