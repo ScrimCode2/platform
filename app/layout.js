@@ -5,7 +5,6 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'TTC | Dashboard'
-  // description: 'Next.js Tutorial',
 }
 
 export default function RootLayout({ children }) {
