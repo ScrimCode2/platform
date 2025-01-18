@@ -42,6 +42,8 @@ const Graph = () => {
       click: 4300,
     },
   ];
+  
+
     return (
         <div className={styles.container}>
           <h2 className={styles.title}>Weecle Recap</h2>
