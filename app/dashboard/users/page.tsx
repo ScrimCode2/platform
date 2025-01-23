@@ -1,18 +1,16 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-
 import styles from './User.module.css';
 import Seacrh from '../../ui/dashboard/search/search';
 import Pagination from '../../ui/dashboard/pagination/pagition';
 import Link from 'next/link';
 import Image from 'next/image';
 import Modal from '../../ui/dashboard/modal/Modal';
-import Delete from './DeleteBtn'
-
+import Delete from './DeleteBtn';
 
 export default function UsersPage() {
-    
+
   const [users, setUsers] = useState([]);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -65,10 +63,12 @@ export default function UsersPage() {
     }
   };
 
+  
+
   return (
     <div className={styles.container}>
       <div className={styles.top}>
-        <Seacrh placeholder="Поиск по пользователям" />
+        <Seacrh placeholder="Поиск по пользователям" onSearch={setUsers}/>
         <Link href='/dashboard/users/add'>
           <button className={styles.addButton}>Add New</button>
         </Link>
@@ -113,13 +113,21 @@ export default function UsersPage() {
                   </button>
                     <Delete userId={user.id}/>
                   {/* <button className={`${styles.button} ${styles.delete}`}>Delete</button> */}
-                  De
                 </div>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
+      {/* {users.length > 0 ? (
+          <ul>
+            {users.map((user) => (
+              <li key={user.id}>{user.username} ({user.chatId})</li>
+            ))}
+          </ul>
+        ) : (
+          <p>No users found</p>
+        )} */}
       <Modal
         user={selectedUser}
         isOpen={isModalOpen}

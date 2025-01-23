@@ -1,0 +1,160 @@
+/*!*************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[7].use[3]!./app/ui/dashboard/navbar/navbar.module.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************/
+.navbar_container__wgx6E {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    background-color: var(--bgObj);
+    border-radius: 10px;
+}
+
+.navbar_search___WH_U, .navbar_menu__I_JWq {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar_icons__powNM {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.navbar_title__fXyFf {
+    color: var(--textObj);
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.navbar_search___WH_U {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--bgInput);
+    color: var(--text);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.navbar_inputSearch__l61ZV {
+    background-color: transparent;
+}
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[7].use[3]!./app/ui/dashboard/sidebar/menuLink/menuLink.module.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************/
+.menuLink_container__jsAb6 {
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+}
+
+.menuLink_container__jsAb6:hover, .menuLink_active__0jFVX{
+    background-color: #2e374a;
+    border-radius: 10px;
+}
+/*!***************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[7].use[3]!./app/ui/dashboard/sidebar/sidebar.module.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************/
+.sidebar_container__98R6a {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 40px;
+}
+
+.sidebar_avatar__SoTFL {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.sidebar_user__RC2Iy {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.sidebar_userName__eikUB {
+    font-weight: 600;
+}
+
+.sidebar_userRole__Ofaiu {
+    font-size: 12px;
+    color: var(--textObj);
+}
+
+.sidebar_userDetail__mlaR9 {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar_list__AUZl1 {
+    list-style: none;
+}
+
+.sidebar_cat__7oOge {
+    color: var(--textObj);
+    font-weight: bold;
+    font-size: 13px;
+    margin: 10px 0px;
+}
+
+.sidebar_logout__iruON {
+    display: flex;
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    color: var(--text);
+    font-weight: bold;
+    gap: 5px;
+    width: 100%;
+    cursor: pointer;
+    padding: 20px;
+}
+
+.sidebar_logout__iruON:hover {
+    background-color: #2e374a;
+    border-radius: 10px;
+}
+/*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[7].use[3]!./app/ui/dashboard/dashboard.module.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************/
+.dashboard_container__FPt6d {
+    display: flex;
+}
+
+.dashboard_menu__kkWR1 {
+    flex: 1 1;
+    background-color: var(--bgObj);
+    padding: 20px;
+}
+
+.dashboard_content__sQime {
+    flex: 4 1;
+    padding: 20px;
+}
+
+.dashboard_wrapper__BHOQf{
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+.dashboard_main__h9_Qo{
+    display: flex;
+    flex: 3 1;
+    flex-direction: column;
+    gap: 20px;
+}
+.dashboard_cards__FzV77{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+.dashboard_rightBlock__b5GA2{
+    flex: 1 1;
+}
+

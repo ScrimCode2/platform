@@ -21,11 +21,11 @@ const menuItems = [
         ],
     },
     {
-        title: "Analytics",
+        title: "Other",
         list: [
             {
-                title: "Revenue",
-                path: ""
+                title: "Docs",
+                path: "/dashboard/docs"
             },
             {
                 title: "Reports",
