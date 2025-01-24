@@ -1,0 +1,37 @@
+generator client2 {
+  provider = "prisma-client-js"
+  output   = "./prisma/generated/documentation-client"
+}
+
+datasource documentationDb {
+  provider = "postgresql"
+  url      = env("DATABASE_URL_DOCS")
+}
+
+model document {
+  id        Int      @id @default(autoincrement())
+  title     String
+  subtitle  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  Block block[]
+}
+
+model block {
+  id         Int       @id @default(autoincrement())
+  documentId Int
+  type       BlockType
+  content    String
+  language   String?
+  orderIndex Int
+  createdAt  DateTime  @default(now()) @documentationDb.Timestamptz(6)
+  updatedAt  DateTime  @updatedAt @documentationDb.Timestamptz(6)
+
+  document document @relation(fields: [documentId], references: [id], onDelete: Cascade)
+}
+
+enum BlockType {
+  TEXT
+  CODE
+}
