@@ -27,11 +27,10 @@ export default function DocumentationsPage() {
     fetchDocuments();
   }, []);
 
-  let test = () => {
+  let view = () => {
     let a = selectedDocumentId ? <DocumentDetails documentId={selectedDocumentId} onBack={() => setSelectDocumentId(null)} /> : 'Дока не выбрана'
     return a
   }
-
 
   return (
     <div>
@@ -45,11 +44,20 @@ export default function DocumentationsPage() {
           key={doc.id} 
           onClick={() => setSelectDocumentId(doc.id)}
           >
-            <h2 className={styles.li}>{doc.title}</h2>
+            <h2 className={styles.obj}>{doc.title}</h2>
+
+            <div className={styles.docContentBlock}>
+              <p>
+                {/* {doc.Block.map((block) => {
+                return block
+                
+              })} */}
+              </p> 
+            </div>
           </li>
         ))}
       </ul>
-      {test()}
+      {view()}
       </div>
       <CreatePostModal/>
     </div>

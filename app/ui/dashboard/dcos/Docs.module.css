@@ -1,0 +1,38 @@
+.wrapper, .textarias {
+display: flex;
+flex-direction: column;
+}
+.btns {
+    display: flex;
+    justify-content: space-between ;
+}
+
+.input {
+    border: 1px solid white;
+    padding: 5px 10px;
+}
+
+.containercontent {
+    min-width: 600px;
+    max-width: 600px;
+}
+
+.title {
+    min-width: 600px;
+}
+
+.textblock {
+    padding: 5px 20px;
+    background-color: var(--bgTextBlock);
+    border-radius: 7px;
+}
+
+.codeblock{
+    padding: 5px 20px;
+    background-color: var(--bgCodeBlock);
+    border-radius: 7px;
+}
+
+.mt15 {
+    margin-top: 15px;
+}

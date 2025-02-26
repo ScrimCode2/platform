@@ -8,6 +8,7 @@ export async function GET(req) {
         title: true,
         subtitle: true,
         createdAt: true,
+        Block: true
       },
       orderBy: { createdAt: 'desc' },
     });

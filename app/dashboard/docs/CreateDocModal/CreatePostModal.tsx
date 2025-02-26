@@ -2,12 +2,14 @@
 
 import { useState } from 'react';
 import { createPost } from '../../../actions/docs/create/actions';
+import styles from './Create.module.css'
 
 export default function CreatePostModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [title, setTitle] = useState('');
   const [subtitle, setSubtitle] = useState('');
 
+  // eslint-disable-next-line no-undef
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -22,59 +24,59 @@ export default function CreatePostModal() {
   };
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       <button
         onClick={() => setIsOpen(true)}
-        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+        className={styles.btn}
       >
-        Создать пост
+        Создать
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-lg p-6 w-full max-w-md">
-            <h2 className="text-xl font-bold mb-4">Создать новый пост</h2>
+        <div className={styles.container}>
+          <div >
+            <h2 className={styles.title}>Создать новую документацию</h2>
 
-            <form onSubmit={handleSubmit}>
-              <div className="mb-4">
-                <label className="block text-gray-700 mb-2">Заголовок</label>
-                <input
-                  type="text"
-                  value={title}
-                  onChange={(e) => setTitle(e.target.value)}
-                  className="w-full p-2 border rounded"
-                  required
-                />
-              </div>
+            <form onSubmit={handleSubmit} className={styles.container}>
+  <div>
+    <label className={styles.label}>Заголовок</label>
+    <input
+      type="text"
+      value={title}
+      onChange={(e) => setTitle(e.target.value)}
+      className={styles.input}
+      required
+    />
+  </div>
 
-              <div className="mb-4">
-                <label className="block text-gray-700 mb-2">Подзаголовок</label>
-                <input
-                  type="text"
-                  value={subtitle}
-                  onChange={(e) => setSubtitle(e.target.value)}
-                  className="w-full p-2 border rounded"
-                  required
-                />
-              </div>
+  <div>
+    <label className={styles.label}>Подзаголовок</label>
+    <input
+      type="text"
+      value={subtitle}
+      onChange={(e) => setSubtitle(e.target.value)}
+      className={styles.input}
+      required
+    />
+  </div>
 
-              <div className="flex justify-end gap-2">
-                <button
-                  type="button"
-                  onClick={() => setIsOpen(false)}
-                  className="px-4 py-2 text-gray-500 hover:text-gray-700"
-                >
-                  Отмена
-                </button>
+  <div className="flex justify-end gap-2">
+    <button
+      type="button"
+      onClick={() => setIsOpen(false)}
+      className={styles.btn}
+    >
+      Отмена
+    </button>
 
-                <button
-                  type="submit"
-                  className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-                >
-                  Создать
-                </button>
-              </div>
-            </form>
+    <button
+      type="submit"
+      className={styles.btn}
+    >
+      Создать
+    </button>
+  </div>
+</form>
           </div>
         </div>
       )}

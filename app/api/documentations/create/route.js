@@ -13,8 +13,8 @@ export async function POST(req) {
         });
         return NextResponse.json(newDoc, {status: 201})
     } catch(err) {
-        return new Response(JSON.stringify({ error: error.message }), {
+        return new Response(JSON.stringify({ error: err.message }), {
             status: 500,
         });
-    };
+    }
 }

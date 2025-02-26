@@ -1,0 +1,75 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "./prisma/generated/shop-client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL_SHOP")
+}
+
+model categories {
+  id            Int             @id @default(autoincrement())
+  name          String          @unique @db.VarChar(255)
+  imagePath     String?         @db.VarChar(255)
+  createdAt     DateTime        @db.Timestamptz(6)
+  updatedAt     DateTime        @db.Timestamptz(6)
+  subcategories subcategories[]
+}
+
+model orders {
+  id        Int      @id @default(autoincrement())
+  userId    String   @db.VarChar(255)
+  productId Int
+  status    String   @default("pending") @db.VarChar(255)
+  createdAt DateTime @db.Timestamptz(6)
+  updatedAt DateTime @db.Timestamptz(6)
+  products  products @relation(fields: [productId], references: [id], onDelete: Cascade)
+  users     users    @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model products {
+  id            Int           @id @default(autoincrement())
+  name          String        @db.VarChar(255)
+  subCategoryId Int
+  price         Decimal       @db.Decimal(10, 2)
+  stock         Int           @default(0)
+  filePath      String?       @db.VarChar(255)
+  content       String?
+  createdAt     DateTime      @db.Timestamptz(6)
+  updatedAt     DateTime      @db.Timestamptz(6)
+  orders        orders[]
+  subcategories subcategories @relation(fields: [subCategoryId], references: [id], onDelete: Cascade)
+}
+
+model subcategories {
+  id         Int        @id @default(autoincrement())
+  name       String     @db.VarChar(255)
+  categoryId Int
+  imagePath  String?    @db.VarChar(255)
+  createdAt  DateTime   @db.Timestamptz(6)
+  updatedAt  DateTime   @db.Timestamptz(6)
+  products   products[]
+  categories categories @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+}
+
+model transactions {
+  id        Int      @id @default(autoincrement())
+  userId    String   @db.VarChar(255)
+  type      String   @db.VarChar(255)
+  amount    Decimal  @db.Decimal(10, 2)
+  createdAt DateTime @db.Timestamptz(6)
+  updatedAt DateTime @db.Timestamptz(6)
+  users     users    @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model users {
+  id           String         @id @db.VarChar(255)
+  username     String         @unique @db.VarChar(255)
+  balance      Decimal        @default(0) @db.Decimal(10, 2)
+  chatId       String?        @db.VarChar(255)
+  createdAt    DateTime       @db.Timestamptz(6)
+  updatedAt    DateTime       @db.Timestamptz(6)
+  orders       orders[]
+  transactions transactions[]
+}

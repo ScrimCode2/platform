@@ -27,7 +27,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "app/api/users/route.ts", "app/dashboard/docs/page.jsx"  ],
+, "app/api/users/route.ts", "app/dashboard/docs/page.jsx", "lib"  ],
   "exclude": [
     "node_modules"
   ]

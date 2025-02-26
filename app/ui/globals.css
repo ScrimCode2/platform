@@ -4,6 +4,8 @@
     --text: #fff;
     --textObj: #ebebeb;
     --bgInput: #2e374a;
+    --bgTextBlock: #2e374a;
+    --bgCodeBlock: #1c2434;
 }
 
 * {

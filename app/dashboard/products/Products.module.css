@@ -1,0 +1,281 @@
+.shopContainer {
+  padding: 1.5rem;
+  max-width: 1200px;
+  /* margin: 0 auto; */
+}
+.categorySection {
+  margin-bottom: 2rem;
+  background: var(--bgInput);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.categoryTitle {
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.subcategoriesList {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.subcategoryItem {
+  margin-left: 1rem;
+  padding-left: 1rem;
+  border-left: 2px solid #e5e7eb;
+  margin-bottom: 1.5rem;
+}
+
+.subcategoryTitle {
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--textObj);
+  margin-bottom: 1rem;
+}
+
+.productsGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  list-style: none;
+  max-width: 250px;
+  padding: 0;
+  background-color: var(--bgCodeBlock);
+}
+
+.productCard {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  padding: 1rem;
+  transition: box-shadow 0.2s;
+}
+
+.productCard:hover {
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.3);
+}
+
+.productName {
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--textObj);
+  margin-bottom: 0.5rem;
+}
+
+.productPrice {
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+.inStock {
+  color: #059669;
+}
+
+.outOfStock {
+  color: #dc2626;
+}
+
+.digitalBadge {
+  color: #2563eb;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.loadingMessage,
+.errorMessage,
+.emptyMessage {
+  text-align: center;
+  padding: 2rem;
+}
+
+.errorMessage {
+  color: #dc2626;
+}
+
+/* Форма */
+.formContainer {
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  min-width: 138%;
+  display: flex;
+  flex-direction: column;
+}
+
+.containerinputs {
+  display: flex;
+}
+
+.formTitle {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--textObj);
+  display: flex;
+  gap: 20px;
+}
+
+.formGroup {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.formLabel {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #636e72;
+}
+
+.formInput {
+  width: 90%;
+  padding: 0.3rem;
+  border: 1px solid #b2bec3;
+  border-radius: 2px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.formInput:focus {
+  border-color: #6c5ce7;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(108,92,231,0.1);
+}
+
+.formSelect {
+  composes: formInput;
+  appearance: none;
+}
+
+.submitButton {
+  background: var(--bgInput);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  height: 40px;
+  width: 220px;
+}
+
+.submitButton:hover {
+  background: #5b4bc4;
+}
+
+/* Для модального окна */
+.modalContent {
+  width: 100%;
+  max-width: 900px;
+  padding: 2rem;
+  padding-left: 0;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.closeButton {
+  /* position: absolute; */
+  min-width: 2.5rem;
+  height: 2.5rem;
+  background: #ff4757;
+  color: white;
+  border: none;
+  border-radius: 10%;
+  font-size: 1.5rem;
+  /* line-height: 1; */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.closeButton:hover {
+  background: #ff6b81;
+  transform: scale(1.1);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+}
+
+.closeButton:active {
+  transform: scale(0.95);
+}
+
+.closeButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255,71,87,0.4);
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.btn {
+  all: unset;
+  cursor: pointer;
+  background-color: var(--bgInput);
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+
+.delbtn {
+  all: unset;
+  cursor: pointer;
+  background-color: var(--bgInput);
+  padding: 5px 5px;
+}
+
+.delbtn:hover {
+  background-color: var(--bgCodeBlock);
+}
+
+.btn:hover {
+  background-color: var(--bgCodeBlock);
+}
+
+/* Стили для аккордеона */
+.accordionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  /* padding-left: 1rem; */
+  /* padding-top: 1rem; */
+  background: var(--bgInput);
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.accordionIcon {
+  transition: transform 0.3s ease;
+  font-size: 1.2rem;
+  color: #6c5ce7;
+}
+
+.accordionIcon.open {
+  transform: rotate(180deg);
+}
+
+.accordionContent {
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease;
+  max-height: 0;
+  opacity: 0;
+}
+
+.accordionContent.open {
+  max-height: 5000px;
+  opacity: 1;
+}

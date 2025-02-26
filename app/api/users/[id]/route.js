@@ -1,38 +1,38 @@
 import { NextResponse } from "next/server";
-import prisma from '../../../../lib/prisma';
+import { shopPrisma } from '../../../../lib/shop-prisma';
 
 export async function DELETE(request, { params }) {
     const userId = params.id;
 
     try {
-        await prisma.reviews.deleteMany({
-            where: {
-                OR: [
-                    { userId },
-                    { deals: { buyerId: userId } },
-                    { deals: { sellerId: userId } },
-                ],
-            },
-        });
+        // await shopPrisma.reviews.deleteMany({
+        //     where: {
+        //         OR: [
+        //             { userId },
+        //             { deals: { buyerId: userId } },
+        //             { deals: { sellerId: userId } },
+        //         ],
+        //     },
+        // });
 
-        await prisma.transactions.deleteMany({
+        await shopPrisma.transactions.deleteMany({
             where: { userId },
         });
 
-        await prisma.dealAgreements.deleteMany({
-            where: { userId },
-        });
+        // await shopPrisma.dealAgreements.deleteMany({
+        //     where: { userId },
+        // });
 
-        await prisma.deals.deleteMany({
-            where: {
-                OR: [
-                    { buyerId: userId },
-                    { sellerId: userId },
-                ],
-            },
-        });
+        // await shopPrisma.deals.deleteMany({
+        //     where: {
+        //         OR: [
+        //             { buyerId: userId },
+        //             { sellerId: userId },
+        //         ],
+        //     },
+        // });
 
-        const user = await prisma.users.delete({
+        const user = await shopPrisma.users.delete({
             where: { id: userId },
         });
 
